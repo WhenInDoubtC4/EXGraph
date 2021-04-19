@@ -1,0 +1,43 @@
+forall Graph A
+{
+    A.text = Text {
+        string: A.label
+    }
+
+    A.icon = Circle {
+        strokeWidth: 0.0
+    }
+
+    /*ensure minSize(A.icon)
+
+    ensure maxSize(A.icon)*/
+}
+
+forall Graph A; Graph B; Graph Result 
+where Result := or(A, B) 
+{
+    Result.innerIcon = Circle {
+        strokeWidth: 0.0
+        r: Result.icon.r / 1.5
+        center: Result.icon.center
+    }
+
+    /*ensure smallerThan(A.icon, Result.icon)
+    ensure smallerThan(B.icon, Result.icon)*/
+
+    ensure contains(Result.innerIcon, A.icon, 5.0)
+    ensure contains(Result.innerIcon, B.icon, 5.0)
+
+    ensure disjoint(A.icon, B.icon)
+
+    ensure minSize(Result.icon)
+    ensure minSize(A.icon)
+    ensure minSize(B.icon)
+
+    ensure maxSize(Result.icon)
+    ensure maxSize(A.icon)
+    ensure maxSize(B.icon)
+
+    ensure contains(A.icon, A.text)
+    ensure contains(B.icon, B.text)
+}

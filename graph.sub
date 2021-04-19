@@ -1,0 +1,13 @@
+Graph p
+Graph q
+
+Graph or1 := or(p, q)
+
+Graph a
+Graph b
+
+Graph or2 := or(a, b)
+
+/*Graph or3 := or(or1, or2)*/
+
+AutoLabel All
