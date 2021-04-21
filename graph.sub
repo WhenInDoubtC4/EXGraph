@@ -8,6 +8,6 @@ Graph b
 
 Graph or2 := or(a, b)
 
-/*Graph or3 := or(or1, or2)*/
+Graph or3 := or(or1, or2)
 
 AutoLabel All
