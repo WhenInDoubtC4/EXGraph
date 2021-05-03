@@ -1,13 +1,13 @@
 Graph p
 Graph q
 
-Graph or1 := or(p, q)
+Graph u := if(p,q)
+
 
 Graph a
-Graph b
+Variable x
 
-Graph or2 := or(a, b)
+some(x, p, q)
 
-Graph or3 := or(or1, or2)
 
 AutoLabel All
